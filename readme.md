@@ -1,4 +1,4 @@
-Hackathon project by
+CSESoc Hackathon 2021 project by
 
 * Avi D.
 * Won K.
