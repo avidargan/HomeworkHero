@@ -93,7 +93,7 @@ def division():
         "correctAnswer": correctAnswer,
         "incorrectAnswer": [incorrectAnswer1, incorrectAnswer2, incorrectAnswer3],
     }
-    return division
+    return newDict
 
 
 # sanity check route
