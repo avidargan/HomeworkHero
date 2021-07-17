@@ -13,7 +13,7 @@
       <div class="code-desc">
         <p>Enter the 6-digit quiz code provided to you by your teacher!</p>
       </div>
-      <button class="pixel-button">
+      <button v-on:click="goToQ1" class="pixel-button">
         Submit
       </button>
       <div class="character">
@@ -45,13 +45,9 @@ export default {
     };
   },
   methods: {
-    updateCode(event) {
-      const value = event.target.value;
-      if (String(value).length <=6) {
-        this.code = value;
-      }
-      this.$forceUpdate();
-    }
+    goToQ1() {
+      this.$router.push('q1')
+    },
   },
 }
 </script>
