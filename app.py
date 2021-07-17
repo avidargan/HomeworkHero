@@ -31,7 +31,7 @@ CORS(app, resources={r'/*': {'origins': '*'}})
 
 def subtract():
     num1 = random.randint(2, 100)
-    num2 = random.randint(1, num2 - 1)
+    num2 = random.randint(1, num1 - 1)
     question = str(num1) + " - " + str(num2)
     correctAnswer = num1 - num2
     incorrectAnswer1 = correctAnswer - 1
@@ -45,7 +45,26 @@ def subtract():
         "correctAnswer": correctAnswer,
         "incorrectAnswer": [incorrectAnswer1, incorrectAnswer2, incorrectAnswer3],
     }
+    return newDict
 
+def addition():
+    num1 = random.randint(1, 100)
+    num2 = random.randint(1, 100)
+    question = str(num1) + " + " + str(num2)
+    correctAnswer = num1 + num2
+    incorrectAnswer1 = correctAnswer - 1
+    incorrectAnswer2 = correctAnswer + 1
+    incorrectAnswer3 = correctAnswer + 3
+    newDict = {
+        "question": question, 
+        "correctAnswer": correctAnswer,
+        "incorrectAnswer": [incorrectAnswer1, incorrectAnswer2, incorrectAnswer3],
+    }
+    return newDict
+
+def multiplication():
+    num1 = random.randint(1, 100)
+    num2 = random.randint(1, 100)
 
 # sanity check route
 @app.route('/ping', methods=['GET'])
