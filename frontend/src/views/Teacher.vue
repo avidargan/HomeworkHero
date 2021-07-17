@@ -1,45 +1,28 @@
 <template>
   <div class="home">
-    <div class="logo-container">
+      teacher
+    <!-- <div class="logo-container">
       Homework<br>Hero
-    </div>
-    <button class="pixel-button">
+    </div> -->
+    <!-- <button class="pixel-button">
       I'm a Student!
     </button>
-    <button v-on:click="goToTeacher" class="pixel-button">
+    <button class="pixel-button">
       I'm a Teacher!
-    </button>
-    <div class="tts-controls">
-      <div v-on:click="toggleTTS" class="tts-checkbox">
-          <img v-if="tts_enabled" class="checkbox-img" src="../../src/assets/checkbox-on.png">
-          <img v-else class="checkbox-img" src="../../src/assets/checkbox-off.png">
-      </div>
-      Text-to-Speech
-    </div>
+    </button> -->
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Home',
+  name: 'TeacherPortal',
   components: {
   },
   data() {
     return {
-      tts_enabled: true,
     };
   },
   methods: {
-    toggleTTS() {
-      if (this.tts_enabled) {
-        this.tts_enabled = false;
-      } else {
-        this.tts_enabled = true;
-      }
-    },
-    goToTeacher() {
-      this.$router.push('teacher')
-    },
   },
 }
 </script>
@@ -94,25 +77,6 @@ export default {
       background-image: url(../../src/assets/blue_button_pressed.png);
       transform: translateY(3px);
       transform: scale(1.05);
-  }
-
-  .tts-controls {
-    display: flex;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 12px;
-    align-items: center;
-    justify-content: center;
-    color: rgb(225, 225, 225);
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.653);
-    position: absolute;
-    top: 16px;
-    right: 16px;
-  }
-
-  .tts-checkbox {
-    padding: 0px 8px 0px 0px;
-    height: 16px;
-    width: 16px;
   }
 
   .checkbox-img {
