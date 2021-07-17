@@ -3,7 +3,7 @@
     <div class="logo-container">
       Homework<br>Hero
     </div>
-    <button class="pixel-button">
+    <button v-on:click="goToStudentLogin" class="pixel-button">
       I'm a Student!
     </button>
     <button v-on:click="goToTeacher" class="pixel-button">
@@ -39,6 +39,9 @@ export default {
     },
     goToTeacher() {
       this.$router.push('teacher')
+    },
+    goToStudentLogin() {
+      this.$router.push('studentlogin')
     },
   },
 }
@@ -83,6 +86,7 @@ export default {
     background-image: url(../../src/assets/grey_button.png);
     -webkit-box-shadow: 0px 5px 16px 1px rgba(0,0,0,0.72); 
     box-shadow: 0px 5px 16px 1px rgba(0,0,0,0.72);
+    z-index: 10;
   }
 
   .pixel-button:hover {
@@ -119,6 +123,15 @@ export default {
     width: 100%;
     height: 100%;
     image-rendering: pixelated;
+  }
+
+  .character {
+    height: 300px;
+    position: absolute;
+    right: 0px;
+    margin-right: 400px;
+    bottom: 108px;
+    z-index: 1;
   }
 
 </style>

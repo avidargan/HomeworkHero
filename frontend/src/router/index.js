@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import TeacherPortal from '../views/Teacher.vue'
+import StudentLogin from '../views/StudentLogin.vue'
+import StudentCode from '../views/StudentCode.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +17,16 @@ const routes = [
     path: '/teacher',
     name: 'TeacherPortal',
     component: TeacherPortal
+  },
+  {
+    path: '/studentlogin',
+    name: 'StudentLogin',
+    component: StudentLogin
+  },
+  {
+    path: '/studentcode',
+    name: 'StudentCode',
+    component: StudentCode
   },
 ]
 
