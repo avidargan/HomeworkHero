@@ -1,45 +1,38 @@
 <template>
   <div class="home">
-    <div v-if='step' class="home">
-      <div class="logo-container">
-        Select Topics
-      </div>
-      <div v-on:click='toggleAdd'>
-        <button :class ="add_enabled ? 'pixel-button-enabled' : 'pixel-button'">
-          Addition
-        </button>
-      </div>
-      <div v-on:click='toggleSub'>
-        <button :class ="sub_enabled ? 'pixel-button-enabled' : 'pixel-button'">
-          Subtraction
-        </button>
-      </div>
-      <div v-on:click='toggleMul'>
-        <button :class ="mul_enabled ? 'pixel-button-enabled' : 'pixel-button'">
-          Multiplication
-        </button>
-      </div>
-      <div v-on:click='toggleDiv'>
-        <button :class ="div_enabled ? 'pixel-button-enabled' : 'pixel-button'">
-          Division
-        </button>
-      </div>
-
-      <button v-on:click="generateCode" class="pixel-button">
-        Continue
+    <div class="logo-container">
+      Select Topics
+    </div>
+    <div v-on:click='toggleAdd'>
+      <button :class ="add_enabled ? 'pixel-button-enabled' : 'pixel-button'">
+        Addition
       </button>
     </div>
-    <div v-else class="home">
-      <div class="logo-container">
-        The code is SO45Q0
-      </div>
+    <div v-on:click='toggleSub'>
+      <button :class ="sub_enabled ? 'pixel-button-enabled' : 'pixel-button'">
+        Subtraction
+      </button>
     </div>
+    <div v-on:click='toggleMul'>
+      <button :class ="mul_enabled ? 'pixel-button-enabled' : 'pixel-button'">
+        Multiplication
+      </button>
+    </div>
+    <div v-on:click='toggleDiv'>
+      <button :class ="div_enabled ? 'pixel-button-enabled' : 'pixel-button'">
+        Division
+      </button>
+    </div>
+
+    <button v-on:click="generateCode" class="pixel-button">
+       Continue
+    </button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'TeacherPortal',
+  name: 'CodeGenerator',
   components: {
   },
   data() {
@@ -48,7 +41,6 @@ export default {
       sub_enabled: false,
       mul_enabled: false,
       div_enabled: false,
-      step: 1,
     };
   },
   methods: {
@@ -64,8 +56,8 @@ export default {
     toggleDiv() {
       this.div_enabled = !this.div_enabled;
     },
-    generateCode () {
-      this.step = 0;
+    generateCode() {
+      this.$router.push('quizGenerator')
     }
   },
 }
@@ -85,10 +77,6 @@ export default {
     background-size: 1920px 1080px;
     background-repeat: repeat-y;
     background-position: left;
-  }
-
-  #generate-code {
-    display: none;
   }
 
   .logo-container {
