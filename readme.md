@@ -1,6 +1,7 @@
 Hackathon project by
-Avi D.
-Won K.
-Darren T.
-Sai T.
-Bill X.
+
+* Avi D.
+* Won K.
+* Darren T.
+* Sai T.
+* Bill X.
