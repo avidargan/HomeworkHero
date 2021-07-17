@@ -1,5 +1,6 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
+import string
 import random
 import itertools
 
@@ -79,7 +80,10 @@ def battle():
     num1 = [x for x in range(1, 100)]
     return jsonify(num1)
 
-
+@app.route('/portal', methods=['GET'])
+def portal():
+    code = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(6))
+    return jsonify(code)
 
 if __name__ == '__main__':
     app.run()
