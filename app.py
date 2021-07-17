@@ -63,8 +63,38 @@ def addition():
     return newDict
 
 def multiplication():
-    num1 = random.randint(1, 100)
-    num2 = random.randint(1, 100)
+    num1 = random.randint(2, 12)
+    num2 = random.randint(1, 12)
+    question = str(num1) + " x " + str(num2)
+    correctAnswer = num1 * num2
+    incorrectAnswer1 = (num1 - 1) * num2
+    incorrectAnswer2 = num1 * (num2 + 1)
+    incorrectAnswer3 = (num1 + 1) * (num2 + 1)
+    newDict = {
+        "question": question, 
+        "correctAnswer": correctAnswer,
+        "incorrectAnswer": [incorrectAnswer1, incorrectAnswer2, incorrectAnswer3],
+    }
+    return newDict
+
+def division():
+    num1 = random.randint(2, 12)
+    correctAnswer = random.randint(1, 12)
+    num2 = num1 * correctAnswer
+    question = str(num2) + " / " + str(num1)
+    incorrectAnswer1 = correctAnswer - 1
+    incorrectAnswer2 = correctAnswer + 1
+    if incorrectAnswer1 != 0:
+        incorrectAnswer3 = incorrectAnswer1 - 1
+    else:
+        incorrectAnswer3 = incorrectAnswer2 + 1
+    newDict = {
+        "question": question, 
+        "correctAnswer": correctAnswer,
+        "incorrectAnswer": [incorrectAnswer1, incorrectAnswer2, incorrectAnswer3],
+    }
+    return division
+
 
 # sanity check route
 @app.route('/ping', methods=['GET'])
