@@ -4,6 +4,10 @@ import random
 import itertools
 
 
+# global
+hp = 100
+gold =0
+
 # configuration
 DEBUG = True
 
@@ -71,13 +75,35 @@ def multiplication():
 def ping_pong():
     return jsonify('pong!')
 
-@app.route('/battle', methods=['GET', 'POST'])
-def battle():
-    #for loop of 10 questions
-    #randomised between addition, subtraction, multiplication, division
-    #subtract
-    num1 = [x for x in range(1, 100)]
-    return jsonify(num1)
+@app.route('/battle/<is_correct>', methods=['GET', 'POST'])
+def battle(is_correct):
+    try:
+        is_correct = int(is_correct)
+        # What to do on first call???
+
+        global hp, gold
+        if not is_correct:
+            hp -= 10
+        else:
+            gold += 1
+    except:
+        pass
+
+    questiontype = random.randint(1, 4)
+    if questiontype == 1:
+        dictionary  = addition()
+    elif questiontype == 2:
+        dictionary = subtractation()
+    elif questiontype == 3:
+        dictionary = multiplication()
+    else:
+        dictionary = division()
+
+    return {
+        'hp': hp, 
+        'gold': gold,
+        'question': dictionary
+        }
 
 
 
