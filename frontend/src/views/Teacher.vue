@@ -24,14 +24,14 @@
           Division
         </button>
       </div>
-
-      <button v-on:click="generateCode" class="pixel-button">
-        Continue
-      </button>
+      <div class='continue-button'>
+        <img class='continue-button-image' v-on:click="generateCode" src="../assets/green-arrow-right.png"/>
+      </div>
     </div>
     <div v-else class="home">
       <div class="logo-container">
-        The code is SO45Q0
+        The code is 
+        <h1>ABCDEF</h1>
       </div>
     </div>
   </div>
@@ -87,8 +87,20 @@ export default {
     background-position: left;
   }
 
-  #generate-code {
-    display: none;
+  .continue-button {
+    height: 100px;
+    width: 100px;
+    right: 10px;
+    position: absolute;
+    margin-right: 35px;
+  }
+
+  .continue-button-image {
+    height: 100%;
+    width: 100%;
+    image-rendering: pixelated;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
   }
 
   .logo-container {
